@@ -1,6 +1,6 @@
 ########################################################################
 #                                                                      #
-# NiceMath.jl                                                          #
+# DOT_NiceMath.jl                                                          #
 #                                                                      #
 # (c) Dirk Oliver Theis 2022                                           #
 #                                                                      #
@@ -14,7 +14,7 @@
 ########################################################################
 
 """
-Module `NiceMath`
+Module `DOT_NiceMath`
 
 Exports definitions of constants that make math in Julia look even more like acutal math.
 
@@ -35,12 +35,12 @@ Exports definitions of constants that make math in Julia look even more like acu
 
 # Sub-modules
 
-Sub-module names are not exported by `NiceMath`.
+Sub-module names are not exported by `DOT_NiceMath`.
 
-* `NiceMath.NumbersF64`: Provices number definitions based on `Float64` and `Int128`.
-* `NiceMath.NumbersBig`: Provices number definitions based on `BigInt` and `BigFloat`.
+* `DOT_NiceMath.NumbersF64`: Provices number definitions based on `Float64` and `Int128`.
+* `DOT_NiceMath.NumbersBig`: Provices number definitions based on `BigInt` and `BigFloat`.
 """
-module NiceMath
+module DOT_NiceMath
 export ⋅, ¬, ∑, ℜ, ℑ
 
 import Base.:*    ; const ⋅  = Base.:*
@@ -82,5 +82,5 @@ module NumbersBig
 	const ∞ = ℝ(Inf)
 end #^ module NumbersBig
 
-end #^ module NiceMath
+end #^ module DOT_NiceMath
 # EOF
