@@ -2,7 +2,7 @@
 #                                                                      #
 # DOT_NiceMath.jl                                                      #
 #                                                                      #
-# (c) Dirk Oliver Theis 2022                                           #
+# (c) Dirk Oliver Theis 2023                                           #
 #                                                                      #
 #                                                                      #
 # License:                                                             #
