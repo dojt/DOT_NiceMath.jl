@@ -13,7 +13,7 @@
 #                                                                      #
 ########################################################################
 
-"""
+@doc raw"""
 Module `DOT_NiceMath`
 
 Exports definitions of constants that make math in Julia look even more like acutal math.
@@ -21,19 +21,19 @@ Exports definitions of constants that make math in Julia look even more like acu
 # Exports
 
 ## General
-* `⋅` (`\\cdot`) — multiplication (`Base.:*`)
+* `⋅` (`\cdot`) — multiplication (`Base.:*`)
 * `¬` (`\neg`) — negation (`Base.:!`)
-* `∑` (`\\sum`) — summation (`Base.sum`)
-* `∏` (`\\prod`) — product (`Base.prod`)
-* `ℜ`, `ℑ` (`\\Re`,`\\Im`) — real and imaginary part (`Base.real`, `Base.imag`)
+* `∑` (`\sum`) — summation (`Base.sum`)
+* `∏` (`\prod`) — product (`Base.prod`)
+* `ℜ`, `ℑ` (`\Re`,`\Im`) — real and imaginary part (`Base.real`, `Base.imag`)
 
-* `⊗` (``\otimes``) — matrix tensor/kronecker product (`LinearAlgebra.kron`)
-* `⨂` (``\bigotimes``) — tensoration: should behave like `∑` and `∏`.
+* `⊗` (`\otimes`) — matrix tensor/kronecker product (`LinearAlgebra.kron`)
+* `⨂` (`\bigotimes`) — tensoration: should behave like `∑` and `∏`.
 
 ## Number definitions (in sub-modules `Numbers`𝑥𝑦𝑧)
 * `ℝ`, `ℂ` — floating point types; `ℂ === Complex{ℝ}`
 * `ℤ, `ℚ`  — integer-based types; `ℚ === Rational{ℤ}`
-* `𝒊 ::ℂ` (`\\bii`) — imaginary unit
+* `𝒊 ::ℂ` (`\bii`) — imaginary unit
 * `π𝒊 ::ℂ`, `𝒊π ::ℂ`
 * `∞ ::ℝ`  (`Inf`)
 
@@ -60,6 +60,7 @@ import Base.real          ; const ℜ  = Base.real
 import Base.imag          ; const ℑ  = Base.imag
 
 
+import LinearAlgebra
 import LinearAlgebra.kron ; const ⊗  = LinearAlgebra.kron
 
 ⨂(blah) = ⊗(blah...)
