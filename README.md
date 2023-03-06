@@ -4,6 +4,9 @@
 ## Version History
 Time goes up!
 
+#### **v0.1.2**  Added 1st tests
+* Bug fixed `⨂`
+
 #### **v0.1.1**  First draft of ⊗, ⨂
 * `⊗` is LinearAlgebra's `kron`
 * `⨂(blah) = ⊗(blah...)`

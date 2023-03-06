@@ -63,8 +63,13 @@ import Base.imag          ; const ℑ  = Base.imag
 import LinearAlgebra
 import LinearAlgebra.kron ; const ⊗  = LinearAlgebra.kron
 
-⨂(blah) = ⊗(blah...)
-
+function ⨂(blah)
+    if isempty( blah )  return 1   end
+    (tp,rest...) = blah
+    if isempty( rest )  return tp  end
+    # length of blah ≥2:
+    return ⊗(blah...)
+end
 
 module NumbersF64
 	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
