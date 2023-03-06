@@ -24,7 +24,11 @@ Exports definitions of constants that make math in Julia look even more like acu
 * `⋅` (`\\cdot`) — multiplication (`Base.:*`)
 * `¬` (`\neg`) — negation (`Base.:!`)
 * `∑` (`\\sum`) — summation (`Base.sum`)
+* `∏` (`\\prod`) — product (`Base.prod`)
 * `ℜ`, `ℑ` (`\\Re`,`\\Im`) — real and imaginary part (`Base.real`, `Base.imag`)
+
+* `⊗` (``\otimes``) — matrix tensor/kronecker product (`LinearAlgebra.kron`)
+* `⨂` (``\bigotimes``) — tensoration: should behave like `∑` and `∏`.
 
 ## Number definitions (in sub-modules `Numbers`𝑥𝑦𝑧)
 * `ℝ`, `ℂ` — floating point types; `ℂ === Complex{ℝ}`
@@ -42,18 +46,27 @@ Sub-module names are not exported by `DOT_NiceMath`.
 """
 module DOT_NiceMath
 export ⋅, ¬, ∑, ℜ, ℑ
+export ⊗, ⨂
 
-import Base.:*    ; const ⋅  = Base.:*
 
-import Base.:!    ; const ¬  = Base.:!
+import Base.:*            ; const ⋅  = Base.:*
 
-import Base.sum   ; const ∑ = Base.sum
+import Base.:!            ; const ¬  = Base.:!
 
-import Base.real  ; const ℜ  = Base.real
-import Base.imag  ; const ℑ  = Base.imag
+import Base.sum           ; const ∑  = Base.sum
+import Base.prod          ; const ∏  = Base.prod
+
+import Base.real          ; const ℜ  = Base.real
+import Base.imag          ; const ℑ  = Base.imag
+
+
+import LinearAlgebra.kron ; const ⊗  = LinearAlgebra.kron
+
+⨂(blah) = ⊗(blah...)
+
 
 module NumbersF64
-	export ℤ, ℚ, ℝ, ℂ, 𝒊, π𝒊, ∞
+	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
 
 	const ℤ  = Int128
 	const ℝ  = Float64
@@ -68,7 +81,7 @@ module NumbersF64
 end #^ module NumbersF64
 
 module NumbersBig
-	export ℤ, ℚ, ℝ, ℂ, 𝒊, π𝒊, ∞
+	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
 
 	const ℤ  = BigInt
 	const ℝ  = BigFloat
