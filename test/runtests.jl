@@ -26,15 +26,24 @@ function test__⨂()
     end
 end
 
-
-
-
-
-
-
+function test_sgn()
+    @testset verbose=true "Testing `sgn()`" begin
+        @test Int8(+1) == sgn(3.2e-99)
+        @test Int8(+1) == sgn(123//4567)
+        @test Int8(+1) == sgn(3)
+        @test Int8(-1) == sgn(-2.3e-99)
+        @test Int8(-1) == sgn(-123//4567)
+        @test Int8(-1) == sgn(-3)
+        @test Int8( 0) == sgn(-0.0)
+        @test Int8( 0) == sgn(+0.0)
+        @test Int8( 0) == sgn(0//1)
+        @test Int8( 0) == sgn(-0//1)
+    end
+end
 
 @testset verbose=true "Testing DOT_NiceMath.jl" begin
     test__⨂()
+    test_sgn()
 
     @testset "A broken test:" begin
         @test Schnickschnack! skip=true

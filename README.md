@@ -4,6 +4,8 @@
 ## Version History
 Time goes up!
 
+#### **v0.1.3**  Added `sgn() ::Int8` function
+
 #### **v0.1.2**  Added 1st tests
 * Bug fixed `⨂`
 

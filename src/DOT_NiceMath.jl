@@ -47,6 +47,7 @@ Sub-module names are not exported by `DOT_NiceMath`.
 module DOT_NiceMath
 export ⋅, ¬, ∑, ℜ, ℑ
 export ⊗, ⨂
+export sgn
 
 
 import Base.:*            ; const ⋅  = Base.:*
@@ -70,6 +71,8 @@ function ⨂(blah)
     # length of blah ≥2:
     return ⊗(blah...)
 end
+
+sgn(x)::Int8 = Int8(sign(x))
 
 module NumbersF64
 	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
