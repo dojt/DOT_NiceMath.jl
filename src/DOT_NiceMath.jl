@@ -77,7 +77,7 @@ sgn(x)::Int8 = Int8(sign(x))
 module NumbersF64
 	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
 
-	const ℤ  = Int128
+	const ℤ  = Int64
 	const ℝ  = Float64
 
 	const ℚ  = Rational{ℤ}

@@ -4,8 +4,11 @@
 ## Version History
 Time goes up!
 
-#### **v0.1.4**  Removed silly "Manifest.toml" from repo
+#### **v0.1.5**  ℤ,ℚ in `NumbersF64` are now Int64-based
 
+Maybe this will speed up comparisons between ℚs...
+
+#### **v0.1.4**  Removed silly "Manifest.toml" from repo
 
 #### **v0.1.3**  Added `sgn() ::Int8` function
 
