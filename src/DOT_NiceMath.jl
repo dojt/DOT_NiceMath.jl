@@ -48,21 +48,23 @@ module DOT_NiceMath
 export ⋅, ¬, ∑, ℜ, ℑ
 export ⊗, ⨂
 export sgn
+export abs²
 
+import Base.:*            ; const ⋅    = Base.:*
 
-import Base.:*            ; const ⋅  = Base.:*
+import Base.:!            ; const ¬    = Base.:!
 
-import Base.:!            ; const ¬  = Base.:!
+import Base.sum           ; const ∑    = Base.sum
+import Base.prod          ; const ∏    = Base.prod
 
-import Base.sum           ; const ∑  = Base.sum
-import Base.prod          ; const ∏  = Base.prod
-
-import Base.real          ; const ℜ  = Base.real
-import Base.imag          ; const ℑ  = Base.imag
-
+import Base.real          ; const ℜ    = Base.real
+import Base.imag          ; const ℑ    = Base.imag
 
 import LinearAlgebra
-import LinearAlgebra.kron ; const ⊗  = LinearAlgebra.kron
+import LinearAlgebra.kron ; const ⊗    = LinearAlgebra.kron
+
+import Base.abs2          ; const abs² = Base.abs2
+
 
 function ⨂(blah)
     if isempty( blah )  return 1   end

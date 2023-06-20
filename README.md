@@ -4,6 +4,8 @@
 ## Version History
 Time goes up!
 
+#### **v0.1.6**  Added abs²()
+
 #### **v0.1.5**  ℤ,ℚ in `NumbersF64` are now Int64-based
 
 Maybe this will speed up comparisons between ℚs...
