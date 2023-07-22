@@ -41,6 +41,19 @@ function test_sgn()
     end
 end
 
+module _Test_Numbers64
+using DOT_NiceMath.Numbers64
+using ..Test
+@test sizeof(ℤ) == 8
+end
+
+module _Test_Numbers64_legacy
+using DOT_NiceMath.NumbersF64
+using ..Test
+@test sizeof(ℤ) == 8
+end
+
+
 @testset verbose=true "Testing DOT_NiceMath.jl" begin
     test__⨂()
     test_sgn()
