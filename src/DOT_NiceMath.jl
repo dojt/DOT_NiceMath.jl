@@ -41,7 +41,7 @@ Exports definitions of constants that make math in Julia look even more like acu
 
 Sub-module names are not exported by `DOT_NiceMath`.
 
-* `DOT_NiceMath.NumbersF64`: Provices number definitions based on `Float64` and `Int128`.
+* `DOT_NiceMath.Numbers64`:  Provices number definitions based on `Float64` and `Int128`.
 * `DOT_NiceMath.NumbersBig`: Provices number definitions based on `BigInt` and `BigFloat`.
 """
 module DOT_NiceMath
@@ -76,7 +76,7 @@ end
 
 sgn(x)::Int8 = Int8(sign(x))
 
-module NumbersF64
+module Numbers64
 	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
 
 	const ℤ  = Int64
@@ -89,7 +89,9 @@ module NumbersF64
 	const 𝒊π = 𝒊*π
 
 	const ∞ = ℝ(Inf)
-end #^ module NumbersF64
+end #^ module Numbers64
+
+const NumbersF64 = Numbers64 # legacy
 
 module NumbersBig
 	export ℤ, ℚ, ℝ, ℂ, 𝒊, 𝒊π, π𝒊, ∞
