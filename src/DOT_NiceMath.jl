@@ -49,21 +49,24 @@ export ⋅, ¬, ∑, ℜ, ℑ
 export ⊗, ⨂
 export sgn
 export abs²
+export norm₂²
 
-import Base.:*            ; const ⋅    = Base.:*
 
-import Base.:!            ; const ¬    = Base.:!
+import Base.:*             ; const ⋅      = Base.:*
 
-import Base.sum           ; const ∑    = Base.sum
-import Base.prod          ; const ∏    = Base.prod
+import Base.:!             ; const ¬      = Base.:!
 
-import Base.real          ; const ℜ    = Base.real
-import Base.imag          ; const ℑ    = Base.imag
+import Base.sum            ; const ∑      = Base.sum
+import Base.prod           ; const ∏      = Base.prod
+
+import Base.real           ; const ℜ      = Base.real
+import Base.imag           ; const ℑ      = Base.imag
 
 import LinearAlgebra
-import LinearAlgebra.kron ; const ⊗    = LinearAlgebra.kron
+import LinearAlgebra.kron  ; const ⊗      = LinearAlgebra.kron
+import LinearAlgebra.norm2 ; const norm₂² = LinearAlgebra.norm2
 
-import Base.abs2          ; const abs² = Base.abs2
+import Base.abs2           ; const abs²   = Base.abs2
 
 
 function ⨂(blah)
