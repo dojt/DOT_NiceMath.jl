@@ -4,6 +4,8 @@
 ## Version History
 Time goes up!
 
+#### **v0.2**    Added `norm₂`, `norm₂²`
+
 #### **v0.1.7**  NumbersF64 ➨ Numbers64
 
 #### **v0.1.6**  Added abs²()

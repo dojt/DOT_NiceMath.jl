@@ -41,6 +41,26 @@ function test_sgn()
     end
 end
 
+function test_abs²()
+    @testset verbose=true "Testing `abs²()`" begin
+        @test abs²(-2)   == 4
+        @test abs²(-3im) == 9
+        @test abs²(-√7)  ≈ 7
+    end
+end
+function test_norm₂()
+    @testset verbose=true "Testing `norm₂(), norm₂²()`" begin
+        @test norm₂²([-1,+1])        == 2
+        @test norm₂²([1-im, -1-im])  == 4
+        @test norm₂²([-√7-im, √5-im]) ≈ 14
+
+        @test norm₂([-1,-1])      ≈  √2
+        @test norm₂([1-im, 1+im]) ≈  2
+        @test norm₂([-√7-im, √5+im])  ≈ √14
+    end
+end
+
+
 module _Test_Numbers64
 using DOT_NiceMath.Numbers64
 using ..Test
@@ -57,6 +77,8 @@ end
 @testset verbose=true "Testing DOT_NiceMath.jl" begin
     test__⨂()
     test_sgn()
+    test_abs²()
+    test_norm₂()
 
     @testset "A broken test:" begin
         @test Schnickschnack! skip=true

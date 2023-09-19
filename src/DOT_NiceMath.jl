@@ -31,7 +31,7 @@ Exports definitions of constants that make math in Julia look even more like acu
 * `⨂` (`\bigotimes`) — tensoration: should behave like `∑` and `∏`.
 
 * `sgn ::Int8`
-* `abs²`, `norm₂²`
+* `abs²`, `norm₂`, `norm₂²`
 
 ## Number definitions (in sub-modules `Numbers`𝑥𝑦𝑧)
 * `ℝ`, `ℂ` — floating point types; `ℂ === Complex{ℝ}`
@@ -52,25 +52,27 @@ export ⋅, ¬, ∑, ℜ, ℑ
 export ⊗, ⨂
 export sgn
 export abs²
-export norm₂²
+export norm₂, norm₂²
 
 
-import Base.:*             ; const ⋅      = Base.:*
+import Base.:*                ; const ⋅      = Base.:*
 
-import Base.:!             ; const ¬      = Base.:!
+import Base.:!                ; const ¬      = Base.:!
 
-import Base.sum            ; const ∑      = Base.sum
-import Base.prod           ; const ∏      = Base.prod
+import Base.sum               ; const ∑      = Base.sum
+import Base.prod              ; const ∏      = Base.prod
 
-import Base.real           ; const ℜ      = Base.real
-import Base.imag           ; const ℑ      = Base.imag
+import Base.real              ; const ℜ      = Base.real
+import Base.imag              ; const ℑ      = Base.imag
 
 import LinearAlgebra
-import LinearAlgebra.kron  ; const ⊗      = LinearAlgebra.kron
-import LinearAlgebra.norm2 ; const norm₂² = LinearAlgebra.norm2
+import LinearAlgebra.kron     ; const ⊗      = LinearAlgebra.kron
 
-import Base.abs2           ; const abs²   = Base.abs2
+import Base.abs2              ; const abs²   = Base.abs2
 
+import LinearAlgebra.norm2    ; const norm₂  = LinearAlgebra.norm2
+#import LinearAlgebra.norm_sqr ; const  = LinearAlgebra.norm_sqr
+norm₂²(X) = ∑( abs²(𝑥) for 𝑥 ∈ X )
 
 function ⨂(blah)
     if isempty( blah )  return 1   end
