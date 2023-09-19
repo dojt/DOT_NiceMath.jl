@@ -30,6 +30,9 @@ Exports definitions of constants that make math in Julia look even more like acu
 * `⊗` (`\otimes`) — matrix tensor/kronecker product (`LinearAlgebra.kron`)
 * `⨂` (`\bigotimes`) — tensoration: should behave like `∑` and `∏`.
 
+* `sgn ::Int8`
+* `abs²`, `norm₂²`
+
 ## Number definitions (in sub-modules `Numbers`𝑥𝑦𝑧)
 * `ℝ`, `ℂ` — floating point types; `ℂ === Complex{ℝ}`
 * `ℤ, `ℚ`  — integer-based types; `ℚ === Rational{ℤ}`
