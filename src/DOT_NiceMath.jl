@@ -76,13 +76,7 @@ import LinearAlgebra.norm1    ; const norm₁  = LinearAlgebra.norm1
 #import LinearAlgebra.norm_sqr ; const  = LinearAlgebra.norm_sqr
 norm₂²(X) = ∑( abs²(𝑥) for 𝑥 ∈ X )
 
-function ⨂(blah)
-    if isempty( blah )  return 1   end
-    (tp,rest...) = blah
-    if isempty( rest )  return tp  end
-    # length of blah ≥2:
-    return ⊗(blah...)
-end
+⨂(blah; kw...) = mapreduce(identity, kron, blah; kw...)
 
 sgn(x)::Int8 = Int8(sign(x))
 
