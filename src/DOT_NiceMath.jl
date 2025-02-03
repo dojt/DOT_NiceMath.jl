@@ -48,7 +48,7 @@ Sub-module names are not exported by `DOT_NiceMath`.
 * `DOT_NiceMath.NumbersBig`: Provices number definitions based on `BigInt` and `BigFloat`.
 """
 module DOT_NiceMath
-export ⋅, ¬, ∑, ℜ, ℑ
+export ⋅, ¬, ∑, ∏, ℜ, ℑ
 export ⊗, ⨂
 export sgn
 export abs²
