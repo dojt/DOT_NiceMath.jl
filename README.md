@@ -4,13 +4,15 @@
 ## Version History
 Time goes up!
 
+#### **v0.3.1**  added missing `∏` in `export`s
+
+
 #### **v0.3**    API breaking: Calling signature of ⨂ changed!
 
 * `⨂` (bigotimes) now uses `mapreduce` for, I hope, type stability.  This means, it can no longer
   accept an empty (i.e., `isempty()`) positional argument without giving the `init` keyword argument.
 
 * added `norm₁()`
-
 
 #### **v0.2**    Added `norm₂`, `norm₂²`
 

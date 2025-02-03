@@ -1,7 +1,7 @@
 name = "DOT_NiceMath"
 uuid = "3e56a413-cb61-4004-9b36-fbc90ffc4c6e"
 authors = ["dojt <dotheis.work@gmail.com>"]
-version = "0.3.0"
+version = "0.3.1"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
